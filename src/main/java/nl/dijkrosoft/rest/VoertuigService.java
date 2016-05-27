@@ -14,6 +14,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Response;
 import nl.dijkrosoft.jpa.jpamappedsuper.Auto;
+import nl.dijkrosoft.jpa.jpamappedsuper.Boot;
 import nl.dijkrosoft.jpa.jpamappedsuper.Fiets;
 
 /**
@@ -48,6 +49,15 @@ public class VoertuigService {
 		em.persist(f);
 
 		return Response.ok(f).build();
+	}
+	@Path("boot")
+	@POST
+	public Response createBoot(@QueryParam("drijfvermogen") String drijfvermogen) {
+		Boot b = new Boot();
+		b.setDrijfvermogen(Double.parseDouble(drijfvermogen));
+		em.persist(b);
+
+		return Response.ok(b).build();
 	}
 
 	@GET

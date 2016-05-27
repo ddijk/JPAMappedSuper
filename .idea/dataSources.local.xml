@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Derby (Remote) - sun-appserv-samples@localhost" uuid="950c49b3-c997-4779-9be6-dd7280349ab0">
+      <secret-storage>master_key</secret-storage>
+      <user-name>APP</user-name>
+      <schema-pattern>*.APP</schema-pattern>
+      <default-schemas>*.APP</default-schemas>
+    </data-source>
+  </component>
+</project>

@@ -10,32 +10,31 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 /**
- *
  * @author dick
  */
 @MappedSuperclass
 public class Voertuig {
 
-	int numberOfWheels;
+    int numberOfWheels;
 
-	@Id
-	@GeneratedValue
-	int id;
+    @Id
+    @GeneratedValue
+    int id;
 
-	public int getNumberOfWheels() {
-		return numberOfWheels;
-	}
+    public int getNumberOfWheels() {
+        return numberOfWheels;
+    }
 
-	public void setNumberOfWheels(int numberOfWheels) {
-		this.numberOfWheels = numberOfWheels;
-	}
+    public void setNumberOfWheels(int numberOfWheels) {
+        this.numberOfWheels = numberOfWheels;
+    }
 
-	public int getId() {
-		return id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1892398727">
+    <data-source source="LOCAL" name="Derby (Remote) - sun-appserv-samples@localhost" uuid="950c49b3-c997-4779-9be6-dd7280349ab0">
+      <driver-ref>derby.remote</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>org.apache.derby.jdbc.ClientDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby://localhost:1527/sun-appserv-samples</jdbc-url>
+    </data-source>
+  </component>
+</project>
