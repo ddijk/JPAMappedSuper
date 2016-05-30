@@ -5,51 +5,76 @@
  */
 package nl.rabo.rhd;
 
-import java.io.Serializable;
 import java.math.BigInteger;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlElement;
 
-/**
- *
- * @author dick
- */
 @Entity
-public class Verbouwing implements Serializable {
+@Table(name = "XZA_VERBOUWING")
+@SequenceGenerator(name = "VerbouwingsGen", sequenceName = "XZA_VERBOUWING_SEQ")
+public class Verbouwing extends AbstractDomainEntity {
 
-	@Id
-	@GeneratedValue
-	int id;
+    @XmlElement(name = "id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "VerbouwingsGen")
+    private Long id;
 
-	BigInteger bedrag;
+    @Column(name = "VERBOUWKOSTENOMS")
+    private String verbouwKostenOmschrijving;
 
-	@OneToOne
-	Registergoed registergoed;
+    @Column(name = "VERBOUWKOSTENBEDR")
+    private BigInteger verbouwingsKostenBedrag;
 
-	public int getId() {
-		return id;
-	}
+    @Column(name = "VERBOUWMEERWAARDEBEDR")
+    private BigInteger verbouwingMeerwaardeBedrag;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    @OneToOne
+    @Column(name = "REGISTERGOED_ID")
+    private Registergoed registergoed;
 
-	public BigInteger getBedrag() {
-		return bedrag;
-	}
+    @Override
+    public Long getId() {
+        return id;
+    }
 
-	public void setBedrag(BigInteger bedrag) {
-		this.bedrag = bedrag;
-	}
+    public String getVerbouwKostenOmschrijving() {
+        return verbouwKostenOmschrijving;
+    }
 
-	public Registergoed getRegistergoed() {
-		return registergoed;
-	}
+    public void setVerbouwKostenOmschrijving(String verbouwKostenOmschrijving) {
+        this.verbouwKostenOmschrijving = verbouwKostenOmschrijving;
+    }
 
-	public void setRegistergoed(Registergoed registergoed) {
-		this.registergoed = registergoed;
-	}
+    public BigInteger getVerbouwingsKostenBedrag() {
+        return verbouwingsKostenBedrag;
+    }
+
+    public void setVerbouwingsKostenBedrag(BigInteger verbouwingsKostenBedrag) {
+        this.verbouwingsKostenBedrag = verbouwingsKostenBedrag;
+    }
+
+    public BigInteger getVerbouwingMeerwaardeBedrag() {
+        return verbouwingMeerwaardeBedrag;
+    }
+
+    public void setVerbouwingMeerwaardeBedrag(BigInteger verbouwingMeerwaardeBedrag) {
+        this.verbouwingMeerwaardeBedrag = verbouwingMeerwaardeBedrag;
+    }
+
+    public Registergoed getRegistergoed() {
+        return registergoed;
+    }
+
+    public void setRegistergoed(Registergoed registergoed) {
+        this.registergoed = registergoed;
+    }
+
 
 }

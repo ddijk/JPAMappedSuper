@@ -31,10 +31,10 @@ public class RegistergoedService {
 	@Path("metVerbouwing")
 	public Response create() {
 		Registergoed rg = new Registergoed();
-		rg.setOmschrijving("mijn verbouwing " + new Date());
+		rg.setGemeente("mijn gem " + new Date());
 
 		Verbouwing verb = new Verbouwing();
-		verb.setBedrag(new BigInteger("33"));
+		verb.setVerbouwKostenOmschrijving("Keuken "+ new Date());
 		rg.setVerbouwing(verb);
 		verb.setRegistergoed(rg);
 
@@ -47,7 +47,9 @@ public class RegistergoedService {
 	@Path("zonderVerbouwing")
 	public Response createZonder() {
 		Registergoed rg = new Registergoed();
-		rg.setOmschrijving("mijn verbouwing " + new Date());
+		rg.setGemeente("mijn gem \n"
+                        + " \n"
+                        + "jdbc/moaDatasourceOracle   " + new Date());
 
 		em.persist(rg);
 
